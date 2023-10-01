@@ -2,7 +2,7 @@ import { User } from './types/user.interface';
 import { Icon } from './types/icon.enum';
 
 export const getUsersBadge = ( user: User ): Icon | null => {
-  let badge = Icon.DEFAULT;
+  let badge = null;
   switch ( true ) {
     case ( user.solutionCount >= 50 ):
       badge = Icon.BADGE_GOLD;
@@ -13,8 +13,8 @@ export const getUsersBadge = ( user: User ): Icon | null => {
     case ( user.solutionCount >= 5):
       badge = Icon.BADGE_BRONZE;
       break;
-
-
-  }
+    default:
+      badge = Icon.DEFAULT ;
+   }
   return badge;
 };
