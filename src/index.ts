@@ -1,5 +1,7 @@
 import { User } from './types/user.interface';
 import { Icon } from './types/icon.enum';
+import { getAllUser } from './user-store';
+
 
 export const getUsersBadge = ( user: User ): Icon | null => {
   const {solutionCount} = user;
@@ -11,12 +13,12 @@ export const getUsersBadge = ( user: User ): Icon | null => {
   if ( solutionCount >= 5)    return Icon.BADGE_BRONZE;
   if ( solutionCount > 1)     return Icon.BADGE_STARTER;
   if ( solutionCount < 0)     return Icon.BADGE_BADASS;
-  return Icon.DEFAULT ;
+  return null ;
 
 };
 
 function calculateUsersStatistics() {
-  // todo
+  console.log(getAllUser())
 }
 
 calculateUsersStatistics();

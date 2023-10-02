@@ -6,5 +6,5 @@ export enum Icon {
   BADGE_GOLD = 'badge_gold',
   BADGE_PLATINUM = 'badge_platinum',
   BADGE_GODLIKE = 'badge_godlike',
-  DEFAULT = null
+  DEFAULT = 'None'
 }
