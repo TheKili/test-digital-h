@@ -26,11 +26,19 @@ let userBadges = allUsers.map(user =>  getUsersBadge(user))
 console.log("number of users: ", allUsers.length)
 console.log("average userCount: ", allUsers.reduce( (sum, d) => sum + d.solutionCount,0) / allUsers.length )
 console.log("top five users: ", allUsers.sort((a,b) => b.solutionCount - a.solutionCount ).slice(0,5) )
-let badgeCount = userBadges.reduce( (acc, curr) =>
-                        acc.has(curr) ? acc.set(curr, acc.get(curr)+ 1) : acc.set(curr,1),
-                        new Map())
 
-console.log("most given badge: ", [...badgeCount.entries()].reduce((a, e ) => e[1] > a[1] ? e : a)[0])
+
+
+let badgeCount = Promise.all(userBadges).then(
+                      userBadges =>
+                      userBadges.reduce( (acc, curr) =>
+                      acc.has(curr) ? acc.set(curr, acc.get(curr)+ 1) : acc.set(curr,1),
+                      new Map())
+                        )
+badgeCount.then( badgeCount =>
+  console.log("badge count: ", [...badgeCount.entries()]
+  .reduce((a, e ) => e[1] > a[1] ? e : a)[0]))
+console.log("code further down the road")
 }
 
 calculateUsersStatistics();
