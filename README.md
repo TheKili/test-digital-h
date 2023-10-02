@@ -17,10 +17,10 @@ Please make the function `getUsersBadge` async.
 There are new Badges! Please implement the following Badges:
 
 ```
-> 1 starter  
-> 100 platinum  
-> 2000 god like  
-< 0 bad ass  
+> 1 starter
+> 100 platinum
+> 2000 god like
+< 0 bad ass
 ```
 
 Please check branch task-4 for the next assignment.
@@ -31,7 +31,10 @@ We get more and more Users! We need to calculate the Badges for all users in our
 Please read all User from `./src/user-store.ts` (`getAllUser()`) and calculate the badges for all Users.
 
 It would be extra nice to have some statistics afterwards in the console like
+<<<<<<< HEAD
 
+=======
+>>>>>>> task-4
 1. how many users are there
 2. what is the average userCount
 3. who are the top 5 user
