@@ -1,9 +1,12 @@
 import { User } from './types/user.interface';
 import { Icon } from './types/icon.enum';
 import { getAllUser } from './user-store';
+import {emulateLongProcess} from './emulate-long-process'
 
 
-export const getUsersBadge = ( user: User ): Icon | null => {
+export const getUsersBadge = async ( user: User ):Promise <Icon | null> => {
+
+  await emulateLongProcess();
   const {solutionCount} = user;
 
   if ( solutionCount > 2000 ) return Icon.BADGE_GODLIKE;
@@ -31,15 +34,3 @@ console.log("most given badge: ", [...badgeCount.entries()].reduce((a, e ) => e[
 }
 
 calculateUsersStatistics();
-
-
-/*
-
-1. how many users are there
-2. what is the average userCount
-3. who are the top 5 user
-4. what is the most given badge
-
-
-
-*/

@@ -31,10 +31,6 @@ We get more and more Users! We need to calculate the Badges for all users in our
 Please read all User from `./src/user-store.ts` (`getAllUser()`) and calculate the badges for all Users.
 
 It would be extra nice to have some statistics afterwards in the console like
-<<<<<<< HEAD
-
-=======
->>>>>>> task-4
 1. how many users are there
 2. what is the average userCount
 3. who are the top 5 user
